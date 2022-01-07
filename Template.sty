@@ -1,0 +1,153 @@
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{setspace}
+\geometry{left=1.75cm,right=1.75cm,top=2.0cm,bottom=2.0cm}
+\usepackage[UTF8]{ctex}
+\usepackage{setspace}
+\usepackage{color}
+\usepackage{url}
+\usepackage[affil-it]{authblk}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{wrapfig}
+\usepackage{array}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{booktabs}
+\usepackage{indentfirst}
+\usepackage{cite}
+\usepackage{url} 
+\usepackage{subfigure}
+\usepackage{extarrows}
+\usepackage{multirow}
+\usepackage{gensymb}
+\usepackage{listings}
+\usepackage{fontspec} % 定制字体
+\newfontfamily\menlo{Menlo}
+\usepackage{xcolor} % 定制颜色
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{myyellow}{rgb}{1,1,0.75}
+\definecolor{myblue}{rgb}{0.545,0.808,0.98}
+\usepackage[colorlinks,linkcolor=red,anchorcolor=blue,citecolor=black]{hyperref}
+
+\lstdefinestyle{matlabStyle}{ %
+backgroundcolor=\color{white},      % choose the background color
+basicstyle=\footnotesize\ttfamily,  % size of fonts used for the code
+columns=fullflexible,
+tabsize=4,
+breaklines=true,               % automatic line breaking only at whitespace
+captionpos=b,                  % sets the caption-position to bottom
+commentstyle=\color{mygreen},  % comment style
+escapeinside={\%*}{*)},        % if you want to add LaTeX within your code
+keywordstyle=\color{blue},     % keyword style
+stringstyle=\color{mymauve}\ttfamily,  % string literal style
+frame=single,
+rulesepcolor=\color{red!20!green!20!blue!20},
+% identifierstyle=\color{red},
+language=matlab,
+}
+
+\lstdefinelanguage{plane}%
+  {morekeywords={typeof,new,true,false,catch,function,return,null,catch,switch,var,if,in,while,do,else,case,break,where,$,contin},%
+  morecomment=[l]//,%
+  morecomment=[s]{/*}{*/},%
+  morestring=[b]",%
+  morestring=[b]',%
+  }[keywords,comments,strings]%
+
+\lstdefinestyle{planeStyle}{ %
+backgroundcolor=\color{myyellow},      % choose the background color
+basicstyle=\footnotesize\menlo,  % size of fonts used for the code
+columns=fixed,
+tabsize=4,
+breaklines=true,               % automatic line breaking only at whitespace
+captionpos=b,                  % sets the caption-position to bottom
+escapeinside={\%*}{*)},   
+frame=single,
+language=plane,
+keywordstyle=\color{blue},
+breakatwhitespace=false,
+}
+
+\lstdefinestyle{planeStyle2}{ %
+backgroundcolor=\color{myblue},      % choose the background color
+basicstyle=\footnotesize\menlo,  % size of fonts used for the code
+columns=fixed,
+tabsize=4,
+breaklines=true,               % automatic line breaking only at whitespace
+captionpos=b,                  % sets the caption-position to bottom
+escapeinside={\%*}{*)},   
+frame=single,
+language=C++,
+keywordstyle=\color{blue},
+breakatwhitespace=false,
+}
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstdefinestyle{pythonStyle}{
+  frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,%设置行号位置none不显示行号
+  %numberstyle=\tiny\courier, %设置行号大小  
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  escapeinside=``,%逃逸字符(1左面的键)，用于显示中文例如在代码中`中文...`
+  tabsize=4,
+  extendedchars=false %解决代码跨页时，章节标题，页眉等汉字不显示的问题  
+}
+
+
+\newenvironment{shrinkeq}[1]
+{ \bgroup
+\addtolength\abovedisplayshortskip{#1}
+\addtolength\abovedisplayskip{#1}
+\addtolength\belowdisplayshortskip{#1}
+\addtolength\belowdisplayskip{#1}}
+{\egroup\ignorespacesafterend}
+
+\usepackage{fancyhdr}%导入fancyhdr包
+
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhead[L]{page \thepage\ of \pageref{LastPage}}
+\fancyhead[C]{}
+\fancyhead[R]{\textbf{\LaTeX模板}}
+\fancyfoot[L]{朱梓臣（519030910363）}
+\fancyfoot[C]{}
+\fancyfoot[R]{Copyright \copyright \ 2019-\number\year James Zhu \uppercase\expandafter{\romannumeral3} All Rights Reserved}
+\renewcommand{\headrulewidth}{1pt}%分隔线宽度4磅
+\renewcommand{\footrulewidth}{1pt}
+
+\usepackage{algorithm}
+\usepackage{algorithmicx}  
+\usepackage[noend]{algpseudocode}  
+\usepackage{amsmath}  
+  
+\floatname{algorithm}{算法}  
+\renewcommand{\algorithmicrequire}{\textbf{输入:}}  
+\renewcommand{\algorithmicensure}{\textbf{输出:}}  
+
+
+\algnewcommand{\algorithmicforeach}{\textbf{for each}}
+\algdef{SE}[FOR]{ForEach}{EndForEach}[1]
+  {\algorithmicforeach\ #1\ \algorithmicdo}% \ForEach{#1}
+  {\algorithmicend\ \algorithmicforeach}% \EndForEach
+
+\usepackage{bm}
