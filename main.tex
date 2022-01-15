@@ -78,9 +78,9 @@ $$
 \begin{tabular}{ccccccc}
 \toprule
 
-\multirow{2.5}{*}{模型}&\multicolumn {3}{c}{训练集}&\multicolumn {3}{c}{开发集} \\
+\multirow{2.5}{*}{\makecell[c]{Model\\模型}}&\multicolumn {3}{c}{训练集}&\multicolumn {3}{c}{开发集} \\
 
-\cmidrule(r){2-4}\cmidrule(r){5-7}
+\cmidrule(rl){2-4}\cmidrule(rl){5-7}
 &ACC&AUC&EER&ACC&AUC&EER  \\
 \midrule
 GMM_{3}^{13}&$0.9592$&$0.9393$&$0.0926$&$0.9596$&$0.9400$&$0.0911$\\    
@@ -98,14 +98,43 @@ EGMM_{15}^{13}&$0.9629$&$0.9609$&$0.0423$&$0.9629$&$0.9606$&$0.0430$\\
 EGMM_{18}^{13}&$0.9630$&$0.9609$&$0.0425$&$0.9628$&$0.9606$&$0.0430$\\ 
 \bottomrule
 \end{tabular}
-\vspace{-15pt}
 \caption{改变高斯分量数量结果对比}
 \label{wexample}
 \end{table}
 
+\subsection{插入伪代码}
+
+\begin{algorithm}  
+    \caption{基于广度优先搜索判断二分图}  
+    \begin{algorithmic}[1] %每行显示行号  
+        \Require  强连通图$G$，上一轮调用时被遍历到的结点集$U$，及他们被归为的类$label$
+        \Ensure 是否是二分图$Flag$
+        \Function {IsBipartite}{$G,U,label$}
+            \State $son\_of\_U\gets U$中结点的子结点
+            \State
+            \ForEach{$u\in son\_of\_U$}
+            \If {$u\_label= label$}\algorithmiccomment{该结点已被归类且与其父结点相同}
+            \State \Return{$Flag=False$}\algorithmiccomment{得到结果}
+            \Else \If {$u\_label= -label$}\algorithmiccomment{该结点已被归类且与其父结点不同}
+            \State $son\_of\_U\gets son\_of\_U - u$\algorithmiccomment{避免再次遍历该结点的子结点}
+            \Else \algorithmiccomment{该结点未被归类}
+            \State $u\_label\gets -label$\algorithmiccomment{将他们归为与其父结点不同的类}
+            \EndIf
+            \EndIf
+            \EndForEach
+            \State
+            \If {$son\_of\_U=0$}\algorithmiccomment{所有的结点均已被归类}
+            \State\Return{$Flag=True$}
+            \Else \algorithmiccomment{归类在本轮被归类结点的子结点}
+            \State \Return{\Call{IsBipartite}{$G,son\_of\_U,-label$}}
+            \EndIf
+        \EndFunction  
+    \end{algorithmic}  
+\end{algorithm}
+
 \section*{备注}
 %Licence 请勿删除
-本文排版基于\LaTeX{}\href{https://cn.overleaf.com/read/mxmypkyfrzpz}{【OverLeaf】}\href{https://latex.sjtu.edu.cn/read/ndjrkpksrfzn}{【SJTU-ShareLatex】}模板，采用\href{http://creativecommons.org/licenses/by-nc-sa/4.0/}{【CC BY-NC-SA 4.0】}进行许可。
+本文排版基于\LaTeX{}\href{https://github.com/JamesZhutheThird/A-Simple-LaTeX-Template}{【Github】}\href{https://cn.overleaf.com/read/mxmypkyfrzpz}{【OverLeaf】}\href{https://latex.sjtu.edu.cn/read/ndjrkpksrfzn}{【SJTU-ShareLatex】}模板，采用\href{http://creativecommons.org/licenses/by-nc-sa/4.0/}{【CC BY-NC-SA 4.0】}进行许可。
 
 
 \bibliographystyle{unsrt}
