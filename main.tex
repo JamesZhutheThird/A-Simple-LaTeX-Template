@@ -23,19 +23,39 @@
 \section{模板}
 \subsection{插入图片}
 \subsubsection{单张图片}
-正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文如图\ref{fig1}所示
+正文正文正文正文正文正文正文正文\cite{doi:10.5772/4740}正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文如图\ref{fig:single}\ref{fig:pdf}\ref{fig:svg}所示
 
 \begin{figure}[!h]
 	\centering
 	\vspace{0cm}
-	\includegraphics[width=0.7\textwidth,trim=50 100 200 75,clip]{figures/fig1.jpg}%trim裁切依次左下右上
+	\includegraphics[width=0.4\textwidth,trim=50 100 200 75,clip]{figures/fig1.jpg}%trim裁切依次左下右上
 	\vspace{0cm}
 	\caption{图标题}
-	\label{fig1}
+	\label{fig:single}
 \end{figure}
 
+\begin{figure}[!h]
+	\centering
+	\vspace{0cm}
+	\includegraphics[width=0.4\textwidth,trim=0 0 0 0,clip]{figures/fig6.pdf}%trim裁切依次左下右上
+	\vspace{0cm}
+	\caption{图标题}
+	\label{fig:pdf}
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\vspace{0cm}
+	\includesvg[width=0.4\textwidth]{figures/fig5.svg}
+	\vspace{0cm}
+	\caption{图标题}
+	\label{fig:svg}
+\end{figure}
+
+矢量图渲染速度要快得多，且效果更好。
+
 \subsubsection{多张图片}
-正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文如图\ref{fig2}所示
+正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文\cite{wiki,EM}正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文如图\ref{fig:multi}所示
 
 \begin{figure}[!h]
 	\centering
@@ -48,7 +68,7 @@
 	\subfigure[子图4标题]{
 		\includegraphics[width=0.2\linewidth,trim=0 0 0 0,clip]{figures/fig2-4.jpg}}%trim裁切依次左下右上
 	\caption{图标题}
-	\label{fig2}
+	\label{fig:multi}
 \end{figure}
 %多图并列换行自动，可用空格\quad等控制
 
@@ -71,42 +91,46 @@ $$
 
 完整公式汇总参见\url{https://1024th.github.io/MathJax_Tutorial_CN/#/document}
 
+\newpage
 \subsection{插入表格}
 
 \begin{table}[!h]
-\centering
-\begin{tabular}{ccccccc}
-\toprule
-
-\multirow{2.5}{*}{\makecell[c]{Model\\模型}}&\multicolumn {3}{c}{训练集}&\multicolumn {3}{c}{开发集} \\
-
-\cmidrule(rl){2-4}\cmidrule(rl){5-7}
-&ACC&AUC&EER&ACC&AUC&EER  \\
-\midrule
-GMM_{3}^{13}&$0.9592$&$0.9393$&$0.0926$&$0.9596$&$0.9400$&$0.0911$\\    
-GMM_{6}^{13}&$0.9620$&$0.9506$&$0.0676$&$0.9623$&$0.9516$&$0.0654$\\ 
-GMM_{9}^{13}&$0.9659$&$0.9562$&$0.0592$&$0.9661$&$0.9564$&$0.0590$\\ 
-GMM_{12}^{13}&$0.9654$&$0.9543$&$0.0635$&$0.9654$&$0.9535$&$0.0646$\\ 
-GMM_{15}^{13}&$0.9654$&$0.9540$&$0.0641$&$0.9657$&$0.9551$&$0.0617$\\ 
-GMM_{18}^{13}&$0.9661$&$0.9560$&$0.0602$&$0.9661$&$0.9559$&$0.0603$\\ 
-\midrule
-EGMM_{3}^{13}&$0.9572$&$0.9474$&$0.0682$&$0.9569$&$0.9474$&$0.0677$\\    
-EGMM_{6}^{13}&$0.9621$&$0.9541$&$0.0587$&$0.9626$&$0.9553$&$0.0561$\\ 
-EGMM_{9}^{13}&$0.9632$&$0.9583$&$0.0495$&$0.9632$&$0.9585$&$0.0490$\\                         
-EGMM_{12}^{13}&$0.9619$&$0.9612$&$0.0399$&$0.9615$&$0.9604$&$0.0413$\\ 
-EGMM_{15}^{13}&$0.9629$&$0.9609$&$0.0423$&$0.9629$&$0.9606$&$0.0430$\\ 
-EGMM_{18}^{13}&$0.9630$&$0.9609$&$0.0425$&$0.9628$&$0.9606$&$0.0430$\\ 
-\bottomrule
-\end{tabular}
-\caption{改变高斯分量数量结果对比}
-\label{wexample}
+    \centering
+    \begin{threeparttable}
+        \begin{tabular}{ccccccc}
+        \toprule
+        \multirow{2.5}{*}{\makecell[c]{Model\\模型}}&\multicolumn {3}{c}{训练集^\dagger}&\multicolumn {3}{c}{开发集} \\
+        \cmidrule(rl){2-4}\cmidrule(rl){5-7}
+        &ACC&AUC&EER&ACC&AUC&EER  \\
+        \midrule
+        $GMM_{3}^{13}$&$0.9592$&$0.9393$&$0.0926$&$0.9596$&$0.9400$&$0.0911$\\    
+        $GMM_{6}^{13}$&$0.9620$&$0.9506$&$0.0676$&$0.9623$&$0.9516$&$0.0654$\\ 
+        $GMM_{9}^{13}$&$0.9659$&$0.9562$&$0.0592$&$0.9661$&$0.9564$&$0.0590$\\ 
+        $GMM_{12}^{13}$&$0.9654$&$0.9543$&$0.0635$&$0.9654$&$0.9535$&$0.0646$\\ 
+        $GMM_{15}^{13}$&$0.9654$&$0.9540$&$0.0641$&$0.9657$&$0.9551$&$0.0617$\\ 
+        $GMM_{18}^{13}$&$0.9661$&$0.9560$&$0.0602$&$0.9661$&$0.9559$&$0.0603$\\ 
+        \midrule
+        $EGMM_{3}^{13}$&$0.9572$&$0.9474$&$0.0682$&$0.9569$&$0.9474$&$0.0677$\\    
+        $EGMM_{6}^{13}$&$0.9621$&$0.9541$&$0.0587$&$0.9626$&$0.9553$&$0.0561$\\ 
+        $EGMM_{9}^{13}$&$0.9632$&$0.9583$&$0.0495$&$0.9632$&$0.9585$&$0.0490$\\                         
+        $EGMM_{12}^{13}$&$0.9619$&$0.9612$&$0.0399$&$0.9615$&$0.9604$&$0.0413$\\ 
+        $EGMM_{15}^{13}$&$0.9629$&$0.9609$&$0.0423$&$0.9629$&$0.9606$&$0.0430$\\ 
+        $EGMM_{18}^{13}$&$0.9630$&$0.9609$&$0.0425$&$0.9628$&$0.9606$&$0.0430$\\ 
+        \bottomrule
+        \end{tabular}
+        \begin{tablenotes}
+    	    \item[\dagger] 表格注释表格注释表格注释表格注释
+        \end{tablenotes}
+    \end{threeparttable}
+    \caption{改变高斯分量数量结果对比}
+    \label{table:demo}
 \end{table}
 
 \subsection{插入伪代码}
 
 \begin{algorithm}  
     \caption{基于广度优先搜索判断二分图}  
-    \begin{algorithmic}[1] %每行显示行号  
+    \begin{algorithmic}[1] 
         \Require  强连通图$G$，上一轮调用时被遍历到的结点集$U$，及他们被归为的类$label$
         \Ensure 是否是二分图$Flag$
         \Function {IsBipartite}{$G,U,label$}
@@ -132,6 +156,7 @@ EGMM_{18}^{13}&$0.9630$&$0.9609$&$0.0425$&$0.9628$&$0.9606$&$0.0430$\\
     \end{algorithmic}  
 \end{algorithm}
 
+\newpage
 \section*{备注}
 %Licence 请勿删除
 本文排版基于\LaTeX{}\href{https://github.com/JamesZhutheThird/A-Simple-LaTeX-Template}{【Github】}\href{https://cn.overleaf.com/read/mxmypkyfrzpz}{【OverLeaf】}\href{https://latex.sjtu.edu.cn/read/ndjrkpksrfzn}{【SJTU-ShareLatex】}模板，采用\href{http://creativecommons.org/licenses/by-nc-sa/4.0/}{【CC BY-NC-SA 4.0】}进行许可。
