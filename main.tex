@@ -159,6 +159,18 @@ $$
 \end{algorithm}
 
 \newpage
+\subsection{插入代码}
+\lstset{style=SQLStyle}
+\begin{lstlisting}
+SELECT name, course_id
+FROM student, take as T
+GROUP BY ID
+HAVING COUNT(T.course_ID)>0;
+\end{lstlisting}
+
+
+
+\newpage
 \section*{备注}
 %Licence 请勿删除
 本文排版基于\LaTeX{}\href{https://github.com/JamesZhutheThird/A-Simple-LaTeX-Template}{【Github】}\href{https://cn.overleaf.com/read/mxmypkyfrzpz}{【OverLeaf】}\href{https://latex.sjtu.edu.cn/read/ndjrkpksrfzn}{【SJTU-ShareLatex】}模板，采用\href{http://creativecommons.org/licenses/by-nc-sa/4.0/}{【CC BY-NC-SA 4.0】}进行许可。
