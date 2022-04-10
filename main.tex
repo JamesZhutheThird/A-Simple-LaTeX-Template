@@ -3,6 +3,7 @@
 \usepackage{Template}
 
 %标题部分
+\newcommand\theheader{\LaTeX 模板}
 \title{\LaTeX 模板}
 \author{JamesZhutheThird}
 \date{\today}
@@ -101,6 +102,7 @@ $$
     \begin{threeparttable}
         \begin{tabular}{ccccccc}
         \toprule
+        % cmidrule 算0.几行
         \multirow{2.5}{*}{\makecell[c]{Model\\模型}}&\multicolumn {3}{c}{训练集^\dagger}&\multicolumn {3}{c}{开发集} \\
         \cmidrule(rl){2-4}\cmidrule(rl){5-7}
         &ACC&AUC&EER&ACC&AUC&EER  \\
@@ -128,6 +130,29 @@ $$
     \label{table:demo}
 \end{table}
 
+表格\ref{table:todo}用于长文本自动换行
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{m{2cm}<{\centering} m{8cm}<{\centering} m{2cm}<{\centering}}
+    \toprule
+    问题重构 & 方案设计 & 时间规划 \\
+    \midrule
+    复现 & 使用PyTorch和SnnTorch等经过广泛验证的深度学习框架，完成基于MNIST等数据集的图像分类任务，与LeNet等进行对比，了解SNN的训练流程和原理 & 第8周\\ 
+    \midrule
+    迁移 & 构建更大的模型将SNN应用到目标检测等更为复杂的任务上 & 第11周\\ 
+    \midrule
+    探究 & 在上一步的模型基础上，通过设计对比实验，研究并验证SNN算法及特性 & 第12周\\ 
+    \midrule
+    融合 & 将SNN模型与ANN模型结合，通过可视化及数据验证，切实提高任务性能 & 第14周 \\ 
+    \midrule
+    展示 & 通过对网络层参数进行可视化，并利用训练输出绘制趋势图，对比实验结果 & 第16周 \\ 
+    \bottomrule
+    \end{tabular}
+    \caption{脉冲神经网络相关研究规划}
+    \label{table:todo}
+\end{table}
+
+\newpage
 \subsection{插入伪代码}
 
 \begin{algorithm}  
