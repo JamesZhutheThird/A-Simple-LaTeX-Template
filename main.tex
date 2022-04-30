@@ -204,9 +204,44 @@ HAVING COUNT(T.course_ID)>0;
 \bibliographystyle{unsrt}
 \bibliography{cite}
 
-\section*{附录}
-\subsection*{MATLAB代码}
-\lstinputlisting{demo.m}
+\appendix
 
+\section{MATLAB代码}
+\label{appcode:demo}
+\lstinputlisting[language=matlab]{demo.m}
+
+\section{表格和图片}
+%%%
+\setcounter{table}{0}   
+\setcounter{figure}{0}
+\renewcommand{\thetable}{B\arabic{table}}
+\renewcommand{\thefigure}{B\arabic{figure}}
+%%%以上四行需要针对每一个附录进行设置
+
+代码引用参见\ref{appcode:demo}，正文的图表编号是图\ref{fig:single}和表\ref{table:demo}，附录的编号是图\ref{appfig:single}和表\ref{apptable:result}，编号会重置。
+
+\begin{figure}[!h]
+	\centering
+	\vspace{0cm}
+	\includegraphics[width=0.4\textwidth,trim=50 100 200 75,clip]{figures/fig1.jpg}%trim裁切依次左下右上
+	\vspace{0cm}
+	\caption{图标题}
+	\label{appfig:single}
+\end{figure}
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{ccccccc}
+        \toprule
+        模型 & 训练集 $F1_{Micro}$ (最优Epoch) & 验证集 $F1_{Micro}$ & 测试集 $F1_{Micro}(Precision\&Recall)$  \\
+        \midrule
+        Linear & 62.324 (14k) & 62.285 & 62.960 ( 62.895 \& 63.025 ) \\
+        Linear Nested & 62.002 (16k) & 61.875 & 63.766 ( 61.760 \& 65.905 ) \\ 
+        CRF & 62.573 (15k) & 62.489 & 63.253 ( 63.967 \& 62.554 ) \\
+        \bottomrule
+    \end{tabular}
+    \caption{不同模型性能对比}
+    \label{apptable:result}
+\end{table}
 
 \end{document}
