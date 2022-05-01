@@ -4,15 +4,18 @@
 
 %标题部分
 \newcommand\theheader{\LaTeX 模板}
+\newcommand\thefooter{小臣子吃大橙子 \texttt{JamesZhutheThird@vip.qq.com}}
+
 \title{\LaTeX 模板}
 \author{JamesZhutheThird}
 \date{\today}
 %\date{YYYYMMDD}
 
 \begin{document}
-
-\thispagestyle{fancy}
 \maketitle
+\pagestyle{fancyStyle}
+\thispagestyle{fancyStyleForTitle}
+%\thispagestyle{fancyStyleForTitleNoLogo} %用于隐藏校徽
 
 %摘要部分
 \begin{abstract}

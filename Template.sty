@@ -170,14 +170,38 @@ breakatwhitespace=false,
 
 \usepackage{lastpage}
 \pagestyle{fancy}
+\fancypagestyle{fancyStyle}{
 \fancyhead[L]{page \thepage\ of \pageref{LastPage}}
 \fancyhead[C]{}
-\fancyhead[R]{\textbf{\theheader}}
-\fancyfoot[L]{小臣子吃大橙子\;\texttt{JamesZhutheThird@vip.qq.com}}
+\fancyhead[R]{\theheader}
+\fancyfoot[L]{\thefooter}
 \fancyfoot[C]{}
 \fancyfoot[R]{Copyright \copyright \ 2019-\number\year\; James Zhu \uppercase\expandafter{\romannumeral3} All Rights Reserved}
 \renewcommand{\headrulewidth}{1pt}%分隔线宽度4磅
 \renewcommand{\footrulewidth}{1pt}
+}
+
+\fancypagestyle{fancyStyleForTitle}{
+\fancyhead[L]{\includegraphics[scale=0.2]{figures/logo.png}}
+\fancyhead[C]{}
+\fancyhead[R]{}
+\fancyfoot[L]{\thefooter}
+\fancyfoot[C]{}
+\fancyfoot[R]{Copyright \copyright \ 2019-\number\year\; James Zhu \uppercase\expandafter{\romannumeral3} All Rights Reserved}
+\renewcommand{\headrulewidth}{0pt}%分隔线宽度4磅
+\renewcommand{\footrulewidth}{1pt}
+}
+
+\fancypagestyle{fancyStyleForTitleNoLogo}{
+\fancyhead[L]{}
+\fancyhead[C]{}
+\fancyhead[R]{}
+\fancyfoot[L]{\thefooter}
+\fancyfoot[C]{}
+\fancyfoot[R]{Copyright \copyright \ 2019-\number\year\; James Zhu \uppercase\expandafter{\romannumeral3} All Rights Reserved}
+\renewcommand{\headrulewidth}{0pt}%分隔线宽度4磅
+\renewcommand{\footrulewidth}{1pt}
+}
 
 \usepackage{algorithm}
 \usepackage{algorithmicx}  
