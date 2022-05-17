@@ -126,7 +126,7 @@ $$
         \bottomrule
         \end{tabular}
         \begin{tablenotes}
-    	    \item[\dagger] 表格注释表格注释表格注释表格注释
+    	    \item[$\dagger$] 表格注释表格注释表格注释表格注释
         \end{tablenotes}
     \end{threeparttable}
     \caption{改变高斯分量数量结果对比}
@@ -187,15 +187,6 @@ $$
 \end{algorithm}
 
 \newpage
-\subsection{插入代码}
-\lstset{style=SQLStyle}
-\begin{lstlisting}
-SELECT name, course_id
-FROM student, take as T
-GROUP BY ID
-HAVING COUNT(T.course_ID)>0;
-\end{lstlisting}
-
 
 
 \newpage
@@ -210,8 +201,35 @@ HAVING COUNT(T.course_ID)>0;
 \appendix
 
 \section{MATLAB代码}
-\label{appcode:demo}
-\lstinputlisting[language=matlab]{demo.m}
+\label{appcode:demo1}
+\lstinputlisting[style=matlabStyle]{src/demo.m}
+
+\section{Python代码}
+\label{appcode:demo2}
+\lstinputlisting[style=pythonStyle]{src/demo.py}
+
+\section{代码风格}
+\label{appcode:demo3}
+\lstset{style=SQLStyle}
+\begin{lstlisting}
+SELECT name, course_id
+FROM student, take as T
+GROUP BY ID
+HAVING COUNT(T.course_ID)>0;
+\end{lstlisting}
+
+\lstinputlisting[language=sql]{src/demo.sql}
+
+\lstinputlisting[language=matlab]{src/demo.m}
+
+\lstinputlisting[style=matlabStyle]{src/demo.m}
+
+\lstset{style=matlabStyle}
+\lstinputlisting[language=matlab]{src/demo.m}
+
+\lstset{style=matlabStyle}
+\lstset{numberstyle=\tiny\color{gray}}
+\lstinputlisting[language=matlab]{src/demo.m}
 
 \section{表格和图片}
 %%%
@@ -221,7 +239,7 @@ HAVING COUNT(T.course_ID)>0;
 \renewcommand{\thefigure}{B\arabic{figure}}
 %%%以上四行需要针对每一个附录进行设置
 
-代码引用参见\ref{appcode:demo}，正文的图表编号是图\ref{fig:single}和表\ref{table:demo}，附录的编号是图\ref{appfig:single}和表\ref{apptable:result}，编号会重置。
+代码引用参见\ref{appcode:demo1}\ref{appcode:demo2}，使用\texttt{\\lstset\{style=***Style\}}等来设置风格，但是覆盖不完整。正文的图表编号是图\ref{fig:single}和表\ref{table:demo}，附录的编号是图\ref{appfig:single}和表\ref{apptable:result}，编号会重置。
 
 \begin{figure}[!h]
 	\centering
